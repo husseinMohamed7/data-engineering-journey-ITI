@@ -2,7 +2,11 @@
 
 This repository documents my learning progress throughout the ITI Data Engineering program.
 
-## 📚 Modules Covered
+## Program Content Structure
+
+![Logo](Content.png)
+
+## Modules Covered
 
 1. Fundamentals (Python, Linux, Databases)
 2. Working with Data (Pandas, NoSQL, Data Warehouse, Visualization)
@@ -14,7 +18,7 @@ This repository documents my learning progress throughout the ITI Data Engineeri
 
 Each folder contains notes, scripts, exercises, and summaries related to that part of the course.
 
-## 🚀 Goals
+## Goals
 
 - Track my learning progress
 - Practice through small hands-on projects
