@@ -55,7 +55,7 @@ This stage is essential for building the ability to write efficient queries and 
 ---
 
 ## 🧹 Data Cleaning & Transformation with Python
-![Logo](images/datawrangling.png)
+![Logo](images/dataWrangling.png)
 After building a strong foundation in SQL, the next step is learning how to manipulate and prepare data using Python.  
 This includes using libraries like:
 
