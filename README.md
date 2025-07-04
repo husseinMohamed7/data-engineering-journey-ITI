@@ -4,7 +4,7 @@ This repository documents my learning progress throughout the ITI Data Engineeri
 
 ## Program Content Structure
 
-![Logo](Content.png)
+![Logo](images/Content.png)
 
 ## Modules Covered
 
