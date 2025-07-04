@@ -80,7 +80,7 @@ These tools help build scalable, scheduled data pipelines — common in both ent
 ---
 
 ## 📦 Capstone Project
-
+![Logo](images/dataPlatformArchitecture.png)
 At this stage, it’s time to bring everything together through a comprehensive capstone project.  
 It should simulate the kinds of real-world challenges data engineers face:
 
