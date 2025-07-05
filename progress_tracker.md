@@ -3,7 +3,7 @@
 | Module                            | Topic                                 | Status         |
 |-----------------------------------|---------------------------------------|----------------|
 | **Fundamentals**                  | Python Programming Language           | ⬜ Not Started  |
-|                                   | Introduction to Linux                 | ⬜ Not Started  |
+|                                   | Introduction to Linux                 | 🟡 On Going     |
 |                                   | Database Fundamentals                 | ⬜ Not Started  |
 | **Working with Data**             | Pandas, NumPy, Matplotlib             | ⬜ Not Started  |
 |                                   | NoSQL Database                        | ⬜ Not Started  |
