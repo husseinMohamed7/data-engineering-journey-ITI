@@ -28,23 +28,23 @@
 ---
 ## 🔸 Q8: List Linux commands in /usr/bin that start with letter w
 
-ls w*
+- ls w*
 ![w](002.png)
 
 ---
 ## 🔸 Q9: Display the first 4 lines of /etc/passwd
 
-head -4 /etc/passwd
+- head -4 /etc/passwd
 ![haed](003.png)
 
 ---
 ## 🔸 Q10: Display the last 7 lines of /etc/passwd
 
-tail -7 /etc/passwd
+- tail -7 /etc/passwd
 ![tail](004.png)
 
 ---
 ## 🔸 Q11: Display the man page of the passwd file.
 
-man passwd
+- man passwd
 ![man](005.png)
