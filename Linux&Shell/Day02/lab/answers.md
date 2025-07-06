@@ -44,3 +44,28 @@
 - `pwd` > /home/h
 - `mv mypasswd oldpasswd`
 
+---
+---
+## 🔸 Lab02-Q1: Create a user account with the following attribute > Username: ali > Fullname/comment: ali iti > Password: ali
+
+- `sudo useradd -c "ali iti" -p ali ali`
+
+---
+## 🔸 Lab02-Q2: Create a user account with the following attribute > Username: baduser > Full name/comment: Bad User > Password: baduser
+
+- `sudo useradd -c "Bad User" -p baduser baduser`
+
+---
+## 🔸 Lab02-Q3: Create a supplementary (Secondary) group called pgroup with group ID of 30000
+
+- `groupadd -gid 30000 pgroup`
+
+---
+## 🔸 Lab02-Q4: Create a supplementary group called badgroup
+
+- `groupadd badgroup`
+
+---
+## 🔸 Lab02-Q5: Add ali user to the pgroup group as a supplementary group
+
+- 
