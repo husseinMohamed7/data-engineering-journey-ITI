@@ -48,6 +48,7 @@
 ---
 ## 🔸 Lab02-Q1: Create a user account with the following attribute > Username: ali > Fullname/comment: ali iti > Password: ali
 
+-  I will be using sudo as I'm not logged as root
 - `sudo useradd -c "ali iti" -p ali ali`
 
 ---
@@ -68,4 +69,29 @@
 ---
 ## 🔸 Lab02-Q5: Add ali user to the pgroup group as a supplementary group
 
-- 
+-  `sudo usermod -G pgroup ali`
+
+---
+## 🔸 Lab02-Q6: Modify the password of ali’s account to password
+
+-  `sudo passwd ali`;`password`;`password`
+
+---
+## 🔸 Lab02-Q7: Modify ali’s account so the password expires after 30 days
+
+-  `sudo chage -M 30 ali`
+
+---
+## 🔸 Lab02-Q8: Lock bad user account so he can't log in
+
+-  `sudo usermod -L baduser`
+
+---
+## 🔸 Lab02-Q9: Delete bad user account
+
+-  `sudo userdel baduser`
+
+---
+## 🔸 Lab02-Q10: Delete the supplementary group called badgroup.
+
+-  `sudo groupdel pgroup`
