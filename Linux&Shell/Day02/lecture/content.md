@@ -5,11 +5,14 @@
 - Creating/removing files with `touch`, `rm`
 - Creating/removing directories with `mkdir`, `rmdir`
 - Copying files and directories using `cp`
+- Moving/renaming files and directories using `mv`
 
 ## 🔹 Users and Group Administration
 - Viewing users with `cat /etc/passwd`
 - Viewing groups with `cat /etc/group`
 - Understanding primary vs. secondary groups
+- Each user in `/etc/passwd` has 7 fields: `login name; password placeholder; UID; GID; user info (GECOS); home directory; shell`
+- Each user belongs to one **primary group** (defined by GID) and can be part of multiple **secondary groups** for additional permissions.
 
 ## 🔹 Managing Users
 - Adding users: `useradd`, `adduser`
