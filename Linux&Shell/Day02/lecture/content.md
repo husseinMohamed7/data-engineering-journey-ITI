@@ -13,7 +13,7 @@
 - Understanding primary vs. secondary groups
 - Each user in `/etc/passwd` has 7 fields: `login name; password placeholder; UID; GID; user info (GECOS); home directory; shell`
 - Each user belongs to one **primary group** (defined by GID) and can be part of multiple **secondary groups** for additional permissions.
-- 
+- Can't delete a group if it's a primary group for any user
 
 ### 🔹 User Management Commands
 
