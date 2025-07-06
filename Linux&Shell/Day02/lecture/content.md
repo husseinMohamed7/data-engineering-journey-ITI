@@ -13,21 +13,50 @@
 - Understanding primary vs. secondary groups
 - Each user in `/etc/passwd` has 7 fields: `login name; password placeholder; UID; GID; user info (GECOS); home directory; shell`
 - Each user belongs to one **primary group** (defined by GID) and can be part of multiple **secondary groups** for additional permissions.
+- 
 
-## 🔹 Managing Users
-- Adding users: `useradd`, `adduser`
-- Deleting users: `userdel`
-- Changing user password: `passwd`
+### 🔹 User Management Commands
+
+| Command | Description |
+|--------|-------------|
+| `sudo adduser username` | Add new user (with home, password prompt) |
+| `sudo useradd username` | Add new user (manual setup) |
+| `sudo passwd username` | Set/change user password |
+| `sudo userdel username` | Delete user |
+| `sudo userdel -r username` | Delete user and home directory |
+| `sudo usermod -c "comment" username` | Add/change user info (GECOS) |
+| `sudo usermod -e YYYY-MM-DD username` | Set account expiration date |
+| `sudo usermod -L username` | Lock user account |
+| `sudo usermod -U username` | Unlock user account |
+| `sudo chage -M 90 username` | Set password to expire in 90 days |
+
+### 🔹 Group Management Commands
+
+| Command | Description |
+|--------|-------------|
+| `sudo groupadd groupname` | Create new group |
+| `sudo groupdel groupname` | Delete a group |
+| `sudo usermod -g groupname username` | Change user’s primary group |
+| `sudo usermod -aG groupname username` | Add user to a secondary group |
+| `groups username` | Show user groups |
+| `id username` | Show UID, GID, and groups |
+| `getent group groupname` | View group info from system database |
 
 ## 🔹 Ownership and Permissions
-- Viewing with `ls -l`
+- Permissions in `ls -l` appear as:  
+  `-rwxr-xr--` → where:
+  - First character: file type (`-` for file, `d` for directory, `l` for symlink)
+  - Next 3: owner permissions (read `r`, write `w`, execute `x`)
+  - Next 3: group permissions
+  - Last 3: others (everyone else)
+  - The "-" means this permission is not given "rw-" so x is not given
 - Changing owner: `chown`
 - Changing group: `chgrp`
 - Modifying permissions: `chmod` (symbolic and numeric)
-
+  
 ## 🔹 Shutdown and Reboot
-- Shutdown system: `shutdown now`, `poweroff`
-- Reboot system: `reboot`, `shutdown -r now`
+- Shutdown system: `shutdown -h now`, `poweroff`, `systemcl powerof`
+- Reboot system: `reboot`, `shutdown -r now`, `systemcl reboot`
 - Scheduling shutdown: `shutdown +10 "System will shut down in 10 minutes"`
 
 ## 📚 Reference  
