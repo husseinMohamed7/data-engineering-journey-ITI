@@ -90,7 +90,7 @@
 - Step to line 5 (assuming that you are in line 1 and file is more than 5 lines). >> :5
 - Delete the line you are on and line 5. >> dd
 - How to step to the end of line and change to writing mode in one-step. >> A
-![vim](015.gif)
+![vim](imgs/015.gif)
 
 ---
 
