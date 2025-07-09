@@ -52,7 +52,7 @@
 
 ---
 
-## 🔸 Lab02-Q17: What are the minimum permissions needed for:
+## 🔸 Lab02-Q18: What are the minimum permissions needed for:
 - Copy a directory (permission for source directory and permissions for target parent directory)
   - "read" permission for source, "write and execute" permissions for the target
 ![cp dir](imgs/007.png)
@@ -74,3 +74,27 @@
 - Modify a file's content
   - "write" permission
 ![mod](imgs/013.png)
+
+---
+
+## 🔸 Lab03-Q1: Using vi write your CV in the file mycv. Your CV should include your name, age,school, college, experience,...
+- `vim mycv`
+![mycv](imgs/014.png)
+
+---
+
+## 🔸 Lab03-Q2: Open mycv file using vi command then: Without using arrows state how to:
+- Move the cursor down one line at time. >> j
+- Move the cursor up one line at time. >> k
+- Search for word age >> /Age
+- Step to line 5 (assuming that you are in line 1 and file is more than 5 lines). >> :5
+- Delete the line you are on and line 5. >> dd
+- How to step to the end of line and change to writing mode in one-step. >> A
+![vim](015.gif)
+
+---
+
+## 🔸 Lab03-Q10: Create a Bash shell alias named ls for the “ls –l” command
+![mycv](imgs/016.png)
+
+
