@@ -6,40 +6,55 @@
 
 ## 🔸 Lab04-Q1: List the user commands and redirect the output to /tmp/commands.list
 - `ls /usr/bin >  /tmp/commands.list`
+![redirect](imgs/001.png)
 
 ---
 
 ## 🔸 Lab04-Q2: Count the number of user commands
+- `wc -l /tmp/commands.list`
+![count](imgs/002.png)
 
 ---
 
-## 🔸 Lab04-Q3: Get all the users names whose first character in their login is ‘g’.
+## 🔸 Lab04-Q3: Get all the users names whose first character in their login is ‘h’.
+- `cut -d: -f1 /etc/passwd | grep "^h"`
+![pipline1](imgs/003.png)
 
 ---
 
 ## 🔸 Lab04-Q4: Get the logins name and full names (comment) of logins starts with “g”.
+- `cut -d: -f1,5 /etc/passwd | grep "^h"`
+![pipline2](imgs/004.png)
 
 ---
 
 ## 🔸 Lab04-Q5: Save the output of the last command sorted by their full names in a file.
+- `cut -d: -f1,5 /etc/passwd | grep "^h" | sort -k2 > usrs_sorted`
+![pipline3](imgs/005.png)
 
 ---
 
 ## 🔸 Lab04-Q6: Display the number of users who is logged now to the system.
+- `who | wc -l`
+![loggedusrs](imgs/006.png)
 
 ---
 
 ## 🔸 Lab04-Q7: Display lines 7 to line 10 of /etc/passwd file
+head -n 10 /etc/passwd | tail -n 4
+![headtail](imgs/007.png)
 
 ---
 
 ## 🔸 Lab04-Q8: What happens if you execute:
-```
-cat filename1 | cat filename2
-ls | rm
-ls /etc/passwd | wc –l
-```
-
+- `cat filename1 | cat filename2`
+  - don't merge, Displays the second only
+  - ![cat|cat](imgs/008.png)
+- `ls | rm`
+  - gives error in no file names "arguments" provided
+- `ls /etc/passwd | wc –l`
+  - without -l it will give 1 1 12, but when -l and no file then it gives erro
+  - ![wc2](imgs/009.png)
 
 ---
 
@@ -50,10 +65,16 @@ ls /etc/passwd | wc –l
 ### 4.Issue the jobs command and see its output.
 ### 5.Send the sleep command to the foreground and send it again to the background.
 ### 6.Kill the sleep command.
+- ![processes](imgs/010.gif)
+
 ### 7.Display your processes only
+  - `ps -u`
 ### 8.Display all processes except yours
+  - `ps -e -o user,pid,cmd | grep -v "^$USER"`
 ### 9.Use the pgrep command to list your processes only
+  - `pgrep -u $USER `
 ### 10. Kill your processes only. 
+  - `pkill -u $USER`
 
 ---
 
