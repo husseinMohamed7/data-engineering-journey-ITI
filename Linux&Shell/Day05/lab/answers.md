@@ -68,14 +68,14 @@ head -n 10 /etc/passwd | tail -n 4
 - ![processes](imgs/010.gif)
 
 ### 7.Display your processes only
-  - `ps -u`
+  - `ps -u h`
 ### 8.Display all processes except yours
-  - `ps -e -o user,pid,cmd | grep -v "^$USER"`
+  - `ps -e -o user,pid,cmd | grep -v h`
 ### 9.Use the pgrep command to list your processes only
-  - `pgrep -u $USER `
+  - `pgrep -u h`
 ### 10. Kill your processes only. 
-  - `pkill -u $USER`
-
+  - `pkill -u h`
+![ps](imgs/011.png)
 ---
 
 ## 🔸 Lab05-Q1: Compress a file by gzip and bzip2 commands and decompress it again. State the differences between two commands.
