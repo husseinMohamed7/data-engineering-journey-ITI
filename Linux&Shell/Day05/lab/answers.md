@@ -79,28 +79,46 @@ head -n 10 /etc/passwd | tail -n 4
 ---
 
 ## 🔸 Lab05-Q1: Compress a file by gzip and bzip2 commands and decompress it again. State the differences between two commands.
-
+- as showen gzip takes less time, gives a bigger compresed file
+- bzip2 takes more time, gives a smaller compressed file 
+![zip](imgs/012.png)
 ---
 
 ## 🔸 Lab05-Q2: What is the command used to view the content of a compressed file.
+`zcat`
+`bzcat`
+
+![showzip](imgs/013.png)
 
 ---
 
 ## 🔸 Lab05-Q3: Backup etc directory using tar utility.
+`tar -cf etc_backup.tar /etc`
+
+![tar](imgs/014.png)
 
 ---
 
 ## 🔸 Lab05-Q4: Starting from your home directory, find all files that were modified in the last two day.
 
+`find ~ -type f -mtime -2`
+
+![find](imgs/015.png)
+
 ---
 
+## 🔸 Lab05-Q5: Starting from /etc , find files owned by root user.
 
-## 🔸 Lab05-Q5: Starting from / etc , find files owned by root user.
+`find /etc -type f -user root`
+
+![find /etc](imgs/016.png)
 
 ---
-
 
 ## 🔸 Lab05-Q6: Find all directories in your home directory.
+`find ~ -type d`
+
+![find](imgs/017.png)
 
 ---
 
