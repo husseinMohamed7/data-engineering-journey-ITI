@@ -1,4 +1,4 @@
-# ⚡ Distributed Systems – Day 01 Headlines
+# ⚡ Distributed Systems – Headlines
 
 ---
 
