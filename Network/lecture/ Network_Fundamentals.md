@@ -1,4 +1,4 @@
-🌐 Network Fundamentals – Day 01 Headlines
+🌐 Network Fundamentals – Headlines
 
 # 🔹 What is a Network?
 - A collection of devices (hosts) connected to share resources and data.
