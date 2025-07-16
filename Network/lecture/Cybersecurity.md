@@ -1,4 +1,4 @@
-# 🛡️ Cybersecurity – Day 01 Headlines
+# 🛡️ Cybersecurity – Headlines
 
 ---
 
