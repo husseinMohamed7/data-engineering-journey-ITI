@@ -1,4 +1,4 @@
-# ☁️ Cloud Computing – Day 01 Headlines
+# ☁️ Cloud Computing – Headlines
 
 ---
 
