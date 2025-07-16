@@ -3,7 +3,7 @@
 | Module                            | Topic                                 | Status         |
 |-----------------------------------|---------------------------------------|----------------|
 | **Fundamentals**                  | Python Programming Language           | ⬜ Not Started  |
-|                                   | Introduction to Linux                 | 🟡 On Going     |
+|                                   | Introduction to Linux                 | 🟢 Done         |
 |                                   | Database Fundamentals                 | ⬜ Not Started  |
 | **Working with Data**             | Pandas, NumPy, Matplotlib             | ⬜ Not Started  |
 |                                   | NoSQL Database                        | ⬜ Not Started  |
@@ -18,7 +18,7 @@
 | **Workshops**                     | Agile Fundamentals                    | ⬜ Not Started  |
 |                                   | Software Testing                      | ⬜ Not Started  |
 |                                   | OS Fundamentals                       | ⬜ Not Started  |
-|                                   | Network Fundamentals                  | ⬜ Not Started  |
+|                                   | Network Fundamentals                  | 🟡 On Going  |
 | **Employability Skills**          | Freelancing Fundamentals              | ⬜ Not Started  |
 |                                   | Presentation Skills                   | ⬜ Not Started  |
 |                                   | Communication Skills                  | ⬜ Not Started  |
