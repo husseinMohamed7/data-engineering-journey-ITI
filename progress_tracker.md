@@ -17,8 +17,8 @@
 |                                   | Introduction to Docker                | ⬜ Not Started  |
 | **Workshops**                     | Agile Fundamentals                    | ⬜ Not Started  |
 |                                   | Software Testing                      | ⬜ Not Started  |
-|                                   | OS Fundamentals                       | ⬜ Not Started  |
-|                                   | Network Fundamentals                  | 🟡 On Going  |
+|                                   | OS Fundamentals                       | 🟢 Done           |
+|                                   | Network Fundamentals                  | 🟢 Done         |
 | **Employability Skills**          | Freelancing Fundamentals              | ⬜ Not Started  |
 |                                   | Presentation Skills                   | ⬜ Not Started  |
 |                                   | Communication Skills                  | ⬜ Not Started  |
