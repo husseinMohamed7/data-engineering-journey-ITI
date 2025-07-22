@@ -73,6 +73,8 @@ CREATE TABLE `SD37-Company`.`Works_on` (
     ON DELETE RESTRICT
     ON UPDATE RESTRICT);
 ```
+![workon](imgs/WorkOn.png)
+![workon1](imgs/WorkOnFK.png)
 
 
 --- 
