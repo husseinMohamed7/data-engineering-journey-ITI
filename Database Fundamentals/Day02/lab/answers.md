@@ -49,7 +49,7 @@ CREATE TABLE Employee
     EmpFName NVARCHAR(20) NOT NULL,
     EmpLName NVARCHAR(20) NOT NULL,
 
-    DepNo CHAR(2),
+    DepNo INT,
     salary INT UNIQUE,
     
     CONSTRAINT EmpNo_Employee_PK PRIMARY KEY (EmpNo),
@@ -63,7 +63,7 @@ CREATE TABLE Employee
 -- works_on
 CREATE TABLE `SD37-Company`.`Works_on` (
   `EmpNo` INT NOT NULL,
-  `ProjectNo` CHAR(2) NOT NULL,
+  `ProjectNo` INT NOT NULL,
   `job` VARCHAR(20) NULL,
   `Enter_Date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`EmpNo`, `ProjectNo`),
@@ -100,4 +100,43 @@ DROP COLUMN TelephoneNumber;
 ALTER SCHEMA Company TRANSFER [SD37-Company].Department;
 ```
 
-![Q4](Q4-ii.webm)
+![Q4](imgs/004.gif)
+
+---
+
+### 5. Delete the Primary Key of the **Employee** table.  
+- **Why will it not work?**  
+#### a. Can a Primary Key refer to a Unique Key instead of a Foreign Key?
+
+- It gives an error  
+  - because it's being referenced by another table as a Foreign Key.
+
+- **No**, a Primary Key cannot refer to any other key.  
+- But a **Foreign Key** can refer to a **Unique Key** instead of a Primary Key.
+
+---
+
+### 6. Insert at least 3 records (Programmatically) in each table from the data shown in the above image.  
+- The remaining records can be inserted **Visually**.
+
+```sql
+INSERT INTO Project
+VALUES 
+(1, 'Apollo', 120000),
+(2, 'Gemini', 95000),
+(3, 'Mercury', 185600);
+
+```
+
+### 7. Try `UPDATE` and `DELETE` on the previous data.
+
+#### a. Testing Referential Integrity:
+- **i.** Add a new employee with `EmpNo = 11111` in the `works_on` table.  
+    - *Is there an error? What is it?*  
+- **ii.** Change the employee number `10102` to `11111` in the `works_on` table.  
+    - *Is there an error? What is it?*  
+- **iii.** Modify the employee number `10102` in the `employee` table to `22222`.  
+    - *Is there an error? What is it?*  
+- **iv.** Delete the employee with `EmpNo = 10102`.  
+
+
