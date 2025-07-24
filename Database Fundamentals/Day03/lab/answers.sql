@@ -1,18 +1,10 @@
--- Q1
--- Try Connecting to SQL Server Using Windows authentication and using SQL server authenication.
-
+-- DB Fundamentals - Day03
+-- Hussein Mohamed
 ------------------------------------------------------
--- Q2
--- Attach AdventureWorks database.
 
-------------------------------------------------------
--- Q3
--- Create New solution and name it Day1_lab, and save all following queries on it each query on separete sql file.
-
-------------------------------------------------------
 -- Q4
 -- Display all the data from the Employee table (HumanResources Schema) 
----- first transfere from the hr schema
+---- first transfere from the HR schema
 ALTER SCHEMA HumanResources transfere HR.Employee;
 --- Select all from it
 Select * from HumanResources.Employee
@@ -27,7 +19,7 @@ GO
   
 ------------------------------------------------------
 -- Q6
--- Display the Contact Title,FirstName and LastName for those holding Title ‘Ms” OR  LastName=’Antrim’
+-- Display the Contact Title,FirstName and LastName for those holding Title 'Ms' OR  LastName=’Antrim’
 SELECT ContactID, Title, FirstName, LastName
 from Person.Contact
 where  Title = 'Ms' OR LastName = 'Antrim'
@@ -45,9 +37,9 @@ GO
 -- Q8
 -- Display all Contacts with a Title ‘Ms.’ & a FirstName ‘Catherine’.
 -- In addition to displaying anyone else with a LastName ‘Adams’ regardless of  his/her Title and FirstName.
-SELECT ContactID, Title, FirstName, LastName
- from Person.Contact
-where  (Title = 'Ms.' AND FirstName = 'Catherine') OR FirstName = 'Adam'
+SELECT *
+from Person.Contact
+where  (Title = 'Ms.' AND FirstName = 'Catherine') OR LastName = 'Adams'
 GO
   
 ------------------------------------------------------
@@ -77,10 +69,10 @@ GO
 ------------------------------------------------------
 -- Q12
 -- Display each product name along with its its sub categoray name and category name.   
-SELECT Production.Product.Name + ' - ' + Production.ProductSubcategory.Name+ ' - ' + Production.ProductCategory.Name 'product - sub category - category'
-from Production.Product, Production.ProductCategory, Production.ProductSubcategory
-where Production.Product.ProductSubcategoryID =  Production.ProductSubcategory.ProductSubcategoryID 
-AND Production.ProductSubcategory.ProductCategoryID =  Production.ProductCategory.ProductCategoryID
+SELECT pp.Name + ' - ' + ps.Name+ ' - ' + pc.Name 'product - sub category - category'
+from Production.Product as pp, Production.ProductCategory as pc, Production.ProductSubcategory as ps
+where pp.ProductSubcategoryID =  ps.ProductSubcategoryID 
+AND ps.ProductCategoryID =  pc.ProductCategoryID
 GO
 ------------------------------------------------------
 -- Q13
@@ -99,11 +91,15 @@ GO
 ------------------------------------------------------
 -- Q15
 -- Display the Sub Categories that contain products start with B letter (Use Sub Queries). 
-SELECT *
-from Production.ProductSubcategory, Production.Product
-where Production.ProductSubcategory.ProductSubcategoryID = Production.Product.ProductSubcategoryID AND  Production.Product.Name like 'B%'
+SELECT * 
+FROM  Production.ProductSubcategory
+where ProductSubcategoryID IN(
+    SELECT ProductSubcategoryID
+    from Production.Product
+    where Name like 'B%'
+)
 GO
-  
+
 ------------------------------------------------------
 -- Q16
 -- Calculate sum of TotalDue for each OrderDate in Sales.SalesOrderHeader table for the period between  '7/1/2001' and '7/31/2001'
@@ -115,7 +111,7 @@ GO
 ------------------------------------------------------
 -- Q17
 -- Display the Employees HireDate (note no repeated values are allowed)
-SELECT HireDate
+SELECT distinct HireDate
 from HumanResources.Employee
 GO
 
@@ -128,7 +124,7 @@ from Production.Product as pp, Production.ProductCategory as pc, Production.Prod
 where pp.ProductSubcategoryID = ps.ProductSubcategoryID
 AND ps.ProductCategoryID =  pc.ProductCategoryID
 Group By pc.Name
-HAVING avg(pp.ListPrice) > 1000
+HAVING avg(distinct pp.ListPrice) > 1000
 GO 
 -- a. Group by Category name instead of Category ID.
 SELECT avg(distinct pp.ListPrice) as avg_price, pc.ProductCategoryID
@@ -136,7 +132,7 @@ from Production.Product as pp, Production.ProductCategory as pc, Production.Prod
 where pp.ProductSubcategoryID = ps.ProductSubcategoryID
 AND ps.ProductCategoryID =  pc.ProductCategoryID
 Group By pc.ProductCategoryID
-HAVING avg(pp.ListPrice) > 1000
+HAVING avg(distinct pp.ListPrice) > 1000
 GO
 
 ------------------------------------------------------
@@ -144,9 +140,9 @@ GO
 -- Display the Product Name and its ListPrice within the values of 100 and 120 The list should has the following format 
 -- "The [product name] is only! [List price]"
 -- (the list will be sorted according to its ListPrice value)
-SELECT 'the ' + Name + 'is only! ' + CAST(ListPrice as varchar)
+SELECT 'The ' + Name + ' is only! ' + CAST(ListPrice as varchar) AS 'Product price'
 from Production.Product 
-where ListPrice  BETWEEN 100 AND 200
+where ListPrice  BETWEEN 100 AND 120
 ORDER by ListPrice
 GO
   
