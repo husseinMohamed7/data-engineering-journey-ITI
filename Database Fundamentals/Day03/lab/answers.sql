@@ -7,7 +7,7 @@
 ---- first transfere from the HR schema
 ALTER SCHEMA HumanResources transfere HR.Employee;
 --- Select all from it
-Select * from HumanResources.Employee
+Select * from HR.Employee
 GO
   
 ------------------------------------------------------
@@ -161,7 +161,39 @@ SELECT CONVERT(varchar, GETDATE(), 110)
 GO
 ------------------------------------------------------
 -- Bonus: 
+------------------------------------------------------
 -- 1. Use sys schema to display columns’ names and data types on “Product” table in Adventureworks.
+
+-- There is sys.types containing the data types of the columns but not the names
+-- And sys.columns containing the names of the columns join with types with 'user_type_id'
+-- OBJECT_ID is a function that returns the id of any table/column in the database
+SELECT sc.name as 'Column Name', st.name as 'Data type'
+from sys.columns as sc
+join sys.types as st on sc.user_type_id = st.user_type_id
+WHERE sc.object_id = OBJECT_ID('Production.Product');
+GO
+
+------------------------------------------------------
 -- 2. Display all the data from the Employee table (HumanResources Schema) 
 -- a. Using Sql Server management studio query.
+
+---- first transfere from the hr schema
+ALTER SCHEMA HumanResources transfere HR.Employee;
+--- Select all from it
+Select * from HumanResources.Employee
+GO
+------------------------------------------------------
+
 -- 3. Try using Temp Tables.
+-- We loged the viewd data into the #temptest
+-- review it using select on a temp table
+
+select * 
+into #temptest
+from Production.Product
+GO
+--
+select *
+from #temptest
+GO
+
