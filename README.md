@@ -23,9 +23,3 @@ Each folder contains notes, scripts, exercises, and summaries related to that pa
 - Track my learning progress
 - Practice through small hands-on projects
 - Build a technical portfolio
-
----
-
-<h3 align="center">
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=husseinMohamed7.data-engineering-journey-ITI" alt="Visitors"/>
-</h3>
