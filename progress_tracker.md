@@ -4,13 +4,13 @@
 |-----------------------------------|---------------------------------------|-----------------|
 | **Fundamentals**                  | Python Programming Language           | ⬜ Not Started  |
 |                                   | Introduction to Linux                 | 🟢 Done         |
-|                                   | Database Fundamentals                 | ⬜ Not Started  |
+|                                   | Database Fundamentals                 | 🟡 On Going     |
 | **Working with Data**             | Pandas, NumPy, Matplotlib             | ⬜ Not Started  |
 |                                   | NoSQL Database                        | ⬜ Not Started  |
 |                                   | Introduction to Big Data              | ⬜ Not Started  |
 |                                   | Data Warehouse Concept & Services     | ⬜ Not Started  |
 |                                   | Data Exploration & Visualization      | ⬜ Not Started  |
-| **Data Processing & Scheduling**  | Data Processing Frameworks            | 🟡 On Going     |
+| **Data Processing & Scheduling**  | Data Processing Frameworks            | ⬜ Not Started  |
 |                                   | Workflow Scheduling                   | ⬜ Not Started  |
 |                                   | CI/CD Pipelines                       | ⬜ Not Started  |
 | **Cloud & Docker**                | AWS Cloud Services                    | ⬜ Not Started  |
@@ -24,4 +24,4 @@
 |                                   | Communication Skills                  | ⬜ Not Started  |
 |                                   | CV Writing & Interviewing             | ⬜ Not Started  |
 |                                   | Work Ethics                           | ⬜ Not Started  |
-| **GenAI Skills**                  | Generative AI & Prompt Engineering    | ⬜ Not Started  |
+| **GenAI Skills**                  | Generative AI & Prompt Engineering    | ⬜ Not Started  | 
