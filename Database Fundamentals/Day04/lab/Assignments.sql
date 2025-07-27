@@ -1,7 +1,7 @@
 -- DB Fundamentals - Day04
 -- Hussein Mohamed
 ------------------------------------------------------
--- Views Assignment
+-- Views Assignment -- USE ITI
 ------------------------------------------------------
 -- Q1
 -- Create a view that displays student full name, course name if the student has a grade more than 50. 
@@ -60,7 +60,7 @@ JOIN WorksOn w ON e.Emp_Id = w.Emp_Id
 JOIN Project p ON w.Proj_Id = p.Proj_Id;
 GO
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
--- DQL Assignment
+-- DQL Assignment -- USE World
 ------------------------------------------------------
 -- Q1
 -- Display all data for all the countries.
