@@ -243,3 +243,34 @@ and the sum of the salaries for employees in each department, in this format:
 
 
 
+
+create or alter function Salary_Count_emp()
+returns @t table 
+(
+    [Dept. Name / Totals] VARCHAR(50),
+	dept_name varchar(50),
+	sum_salary int
+)
+as
+begin
+    insert into @t
+select * from (
+select 'Sum of Salaries' as [Dept. Name / Totals], DeptName  , SUM(Salary) as sal_aggr
+from Company.Department d, Company.Employee e where e.DepNo = d.DeptNo
+GROUP by DeptName
+UNION
+select 'No. of employees ', d.DeptName  ,count(d.DeptNo) as sal_aggr
+from Company.Employee e, Company.Department d where e.DepNo = d.DeptNo
+GROUP by d.DeptName
+) as tobepivot
+PIVOT(
+    sum(sal_aggr)
+    for DeptName in(
+        [Development], [Quality assurance]
+    )
+) as PVT
+return 
+end
+
+select * from Salary_Count_emp()
+GO
