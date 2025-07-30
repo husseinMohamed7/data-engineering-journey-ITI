@@ -180,6 +180,54 @@ GO
 Use Pivot Table.
 */
 
+-- In the AdventureWorks there is  Purchasing.PurchaseOrderDetail table
+-- Say we want to know the amount of money payed day wise
+-- we need the 3 pivots 
+-- 1- the total mony payed in specific days
+-- 2- the day
+-- 'Total Money payed'
+-- normaly it will show up like this without pivot
+select CONVERT(date, DueDate) 'Due Date' , SUM(LineTotal) 'Total Money payed'
+from Purchasing.PurchaseOrderDetail 
+GROUP by CONVERT(date, DueDate)
+-----------------
+-- let's pivot it
+select * from (
+    select 'total money payed' as 'Due Date', CONVERT(date, DueDate) DueDate  , LineTotal
+    from Purchasing.PurchaseOrderDetail 
+) as tobepivot
+PIVOT(
+    SUM(LineTotal) 
+    for DueDate in(
+        [2004-05-29], [2003-06-09], [2004-08-06]
+    )
+) as PVT
+
+-------------------------
+-- unpivot
+cunreate TABLE #calss (
+    std_id INT,
+    English INT,
+    Arabiic INT,
+    Science INT
+    )
+GO
+
+INSERT INTO #calss
+VALUES (1, 80, 50, 90), (2, 85, 55, 95), (3, 75, 56, 79)
+GO
+
+select * from #calss
+-- Unpivot the table.
+
+SELECT std_id, subject, grade
+FROM  #calss
+UNPIVOT
+(
+    grade FOR subject IN ([English], [Arabiic], [Science])
+) AS unpvt;
+GO
+
 
 ------------------------------------------------------
 -- Bonus(Use SD35-Company DB, or any available DB) 
@@ -192,4 +240,6 @@ and the sum of the salaries for employees in each department, in this format:
 |Sum of Salaries     |
 (Knowing that the company has 2 departments only, first one its ID=1, and the second its ID=2).  
 */
+
+
 
