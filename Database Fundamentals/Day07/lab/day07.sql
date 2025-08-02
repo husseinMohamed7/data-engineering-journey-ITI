@@ -30,18 +30,20 @@ begin tran ATM_tran
 
     if(@err1 = 0 and @err2 = 0 and @err3 = 0)
         BEGIN
-            COMMIT
+            commit tran ATM_tran
             print 'All Done'
         END
     else if(@err1 = 0 and @err2 = 0)
         BEGIN
             PRINT 'Two out of three done'
             rollback tran SP2
+            commit tran ATM_tran
         END
      else if(@err1 = 0)
         BEGIN
             PRINT 'one out of three done'
             rollback tran SP1
+            commit tran ATM_tran
         END
     else
         begin
@@ -65,32 +67,35 @@ begin tran ATM_tran
     set @err1 = @@ERROR
     save tran SP1
 
-    update newschema.Student
-    set Dept_Id = 10
-    where St_Id = 14
+    insert into newschema.Student(St_Id, St_Fname)
+    VALUES(15, 'Hussein')
     set @err2 = @@ERROR
     save tran SP2
 
-    update newschema.Student
-    set St_super = 13
-    where St_Id = 14
+ 
+    insert into newschema.Student(St_Id, St_Fname)
+    VALUES(12, 'Hussein')
     set @err3 = @@ERROR
 
     if(@err1 = 0 and @err2 = 0 and @err3 = 0)
         BEGIN
-            COMMIT
+            commit tran ATM_tran
             print 'All Done'
         END
     else if(@err1 = 0 and @err2 = 0)
         BEGIN
+            PRINT 'Two out of three done'
             rollback tran SP2;
+            commit tran ATM_tran;
             throw 50001, 'Supervisour Not found', 1                                   --------------------------------------
         END
      else if(@err1 = 0)
         BEGIN
-            PRINT 'one out of three done'
-            rollback tran SP1;
+            PRINT 'one out of three done';
+            rollback tran SP1
+            commit tran ATM_tran;
             throw 50002, 'Department ID Not Found',1 --------------------------------------
+
         END
     else
         begin
@@ -99,6 +104,11 @@ begin tran ATM_tran
         end
 GO
 
+
+delete from newschema.Student
+where St_Id = 14 or St_Id = 15
+
+select * from newschema.Student
 ------------------------------------------------------
 -- USE ITI 
 ------------------------------------------------------
