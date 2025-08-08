@@ -4,7 +4,7 @@
 |-----------------------------------|---------------------------------------|-----------------|
 | **Fundamentals**                  | Python Programming Language           | 🟡 On Going     |
 |                                   | Introduction to Linux                 | 🟢 Done         |
-|                                   | Database Fundamentals                 | 🟡 On Going     |
+|                                   | Database Fundamentals                 | 🟢 Done         |
 | **Working with Data**             | Pandas, NumPy, Matplotlib             | ⬜ Not Started  |
 |                                   | NoSQL Database                        | ⬜ Not Started  |
 |                                   | Introduction to Big Data              | ⬜ Not Started  |
