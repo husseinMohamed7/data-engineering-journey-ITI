@@ -1,7 +1,7 @@
 <h1 align="center">Special cases aren't special enough to break the rules</h1>
 
 ## Introduction: Zen of Python
-#### In the Python world, there is a simple philosophy called **Zen of Python**, which is a:
+> In the Python world, there is a simple philosophy called **Zen of Python**, which is a:
 <h2 align="center">Collection of rules that make code clearer and easier to maintain.</h2>
 
 #### It starts with short but deep sentences, like:  
@@ -86,7 +86,6 @@ def file_reader_no_zen():
         else:
             print(f"Content of '{yourfile}':\n{content}")
             option = "no"
-
 ```
 
 The problem here is that the "file not found" case is handled separately in a special way, instead of using the unified error-handling style for all file operations.
@@ -97,8 +96,6 @@ The problem here is that the "file not found" case is handled separately in a sp
 Here, even with dynamic input and saving to JSON, the code keeps the usual working style (using standard library, Path, and try/except).
 
 ```python
-
-
 def write_to_json():
     """read, write, save to json"""
     from pathlib import Path
