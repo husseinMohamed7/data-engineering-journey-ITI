@@ -1,16 +1,18 @@
-# Special cases aren't special enough to break the rules
+<h1 align="center">Special cases aren't special enough to break the rules</h1>
 
 ## Introduction: Zen of Python
-In the Python world, there is a simple philosophy called **Zen of Python**, which is a collection of rules that make code clearer and easier to maintain.  
-It starts with short but deep sentences, like:  
-> Beautiful is better than ugly  
-> Simple is better than complex  
+#### In the Python world, there is a simple philosophy called **Zen of Python**, which is a:
+<h2 align="center">Collection of rules that make code clearer and easier to maintain.</h2>
+
+#### It starts with short but deep sentences, like:  
+- Beautiful is better than ugly  
+- Simple is better than complex  
 
 One of the important rules is:
 > **Special cases aren't special enough to break the rules**  
 
-The idea is that even if you have a "special" or "exceptional" case, it does not mean you should change your coding style or break the rules that maintain clarity and simplicity.  
-Exceptions might tempt you to cheat the style, but that usually leads to complexity and harder maintenance.
+The idea is that even if you have a **special** or **exceptional** case, you should not change your coding style or break the rules that maintain clarity and simplicity.
+Doing so often makes the code more complex and harder to maintain.
 
 ---
 
@@ -28,14 +30,15 @@ Exceptions might tempt you to cheat the style, but that usually leads to complex
 
 ## Examples Applying the Rule
 
-### ✅ Example following the rule
+### 🟢 Example following the rule
 In this example, we read the content of any text file using the standard file-handling approach, even if the file does not exist.
 
 ```python
-from pathlib import Path
-
-def file_reader():
+def file_reader_with_zen():
     """Check for the existence of a file and return its content"""
+    
+    from pathlib import Path
+
     option = "yes"
     while option == "yes":
         yourfile = input("Enter your file name: ")
@@ -48,51 +51,59 @@ def file_reader():
         else:
             print(f"Content of '{yourfile}':\n{content}")
             option = "no"
-
-file_reader()
 ```
 
 Here, even if the case is "special" (file not found), we handle it using the same try/except logic without unusual hacks.
 
 ---
 
-### ❌ Example breaking the rule
-In this example, instead of following the same approach for checking write permissions, a very specific handling is applied for one case (read-only file) in an isolated way.
+### 🔴 Example breaking the rule
+In this example, instead of following the same unified try/except approach for reading files,
+a special isolated check is applied only for the "file not found" case.
 
 ```python
-from pathlib import Path
+def file_reader_no_zen():
+    """Check for the existence of a file and return its content"""
 
-def file_writer():
-    """Write content to a file"""
-    yourfile = input("Enter your file name: ")
-    yourcontent = input("What do you want to write in it?  ")
-    path = Path(yourfile)
-    try:
-        content = path.write_text(yourcontent)
-    except PermissionError:
-        # Special hardcoded handling that deviates from general file handling
-        print(f"Error: Permission denied to write to '{path}'!")
-    else:
-        content = path.read_text()
-        print(f"Data saved successfully to '{path}'")
-        print(f"Content of '{path}':\n{content}")
+    from pathlib import Path
 
-file_writer()  # e.g. xyz is read only
+    option = "yes"
+    while option == "yes":
+        yourfile = input("Enter your file name: ")
+        path = Path(yourfile)
+
+        if not path.exists():
+            # Special hardcoded handling that deviates from standard file reading
+            print(f"'{yourfile}' does not exist")
+            option = input("Search again (yes)/(no)? ")
+            continue
+        
+        try:
+            content = path.read_text()
+        except Exception as e:
+            print(f"Unexpected error: {e}")
+            option = "no"
+        else:
+            print(f"Content of '{yourfile}':\n{content}")
+            option = "no"
+
 ```
 
-The problem here is that the error handling is done in a separated, specific way.  
-It would be better to unify the error handling style across all file operations.
+The problem here is that the "file not found" case is handled separately in a special way, instead of using the unified error-handling style for all file operations.
 
 ---
 
-### ✅ Another example following the rule
+### 🟢 Another example following the rule
 Here, even with dynamic input and saving to JSON, the code keeps the usual working style (using standard library, Path, and try/except).
 
 ```python
-from pathlib import Path
-import json
+
 
 def write_to_json():
+    """read, write, save to json"""
+    from pathlib import Path
+    import json
+    
     data = {}
     while True:
         json_path = input("Enter the file name (must end with .json): ")
@@ -122,8 +133,6 @@ def write_to_json():
         print(f"Error reading the file '{path}'")
     else:
         print(f"File saved successfully with content:\n{json_content}")
-
-write_to_json()
 ```
 
 Here, even in special cases (invalid file name, stopping input), the same standard handling style with try/except and validation is applied.
