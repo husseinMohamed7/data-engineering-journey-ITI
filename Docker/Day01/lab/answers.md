@@ -7,7 +7,7 @@
 ```bash
 docker network create --subnet=172.18.0.0/16 net1
 ```
-[net1](001.png)
+![net1](001.png)
 
 ---
 
@@ -15,7 +15,7 @@ docker network create --subnet=172.18.0.0/16 net1
 ```bash
 docker run -dit --name cont1 --network net1 nginx
 ```
-[cont1](002.png)
+![cont1](002.png)
 
 ---
 
@@ -23,13 +23,13 @@ docker run -dit --name cont1 --network net1 nginx
 ```bash
 docker run -dit --name cont2 nginx
 ```
-[cont2](003.png)
+![cont2](003.png)
 
 ---
 
 ### 4. Ping from `cont1` to `cont2`
 No — it can’t connect to a container on a different network.  
-[ping-fail](004.png)
+![ping-fail](004.png)
 
 ---
 
@@ -39,4 +39,4 @@ No — it can’t connect to a container on a different network.
 docker network connect net1 cont2
 ```
 2. Try pinging again:  
-[ping-success](005.png)
+![ping-success](005.png)
