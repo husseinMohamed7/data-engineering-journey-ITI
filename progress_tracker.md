@@ -14,7 +14,7 @@
 |                                   | Workflow Scheduling                   | ⬜ Not Started  |
 |                                   | CI/CD Pipelines                       | ⬜ Not Started  |
 | **Cloud & Docker**                | AWS Cloud Services                    | ⬜ Not Started  |
-|                                   | Introduction to Docker                | ⬜ Not Started  |
+|                                   | Introduction to Docker                | 🟢 Done         |
 | **Workshops**                     | Agile Fundamentals                    | ⬜ Not Started  |
 |                                   | Software Testing                      | ⬜ Not Started  |
 |                                   | OS Fundamentals                       | 🟢 Done         |
