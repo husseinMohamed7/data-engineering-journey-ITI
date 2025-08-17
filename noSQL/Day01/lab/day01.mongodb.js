@@ -1,4 +1,6 @@
-//    Lab 01 - noSQL
+// ================================
+//   Lab 01 - NoSQL (MongoDB)
+// ================================
 
 // q1 - Create database named: FacultySystemDB.
 use('FacultySystemDB')
@@ -54,7 +56,7 @@ db.student.find({isFired:false})
 
 db.student.find({$and:[{age:{$gte: 26}}, {faculty:{$exists:true}}]})
 
-db.student.find({fName:"Ahmed"}, {fName:1, lName:1,isFired:1,_id:0})
+db.student.find({fName:"Ahmed"}, {fName:1, lName:1,isFired:1,_id:0});
 
 // q5
 /*
