@@ -6,7 +6,7 @@
 |                                   | Introduction to Linux                 | 🟢 Done         |
 |                                   | Database Fundamentals                 | 🟢 Done         |
 | **Working with Data**             | Pandas, NumPy, Matplotlib             | ⬜ Not Started  |
-|                                   | NoSQL Database                        | ⬜ Not Started  |
+|                                   | NoSQL Database                        | 🟡 On Going     |
 |                                   | Introduction to Big Data              | ⬜ Not Started  |
 |                                   | Data Warehouse Concept & Services     | ⬜ Not Started  |
 |                                   | Data Exploration & Visualization      | ⬜ Not Started  |
