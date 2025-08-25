@@ -21,7 +21,7 @@
 |                                   | Network Fundamentals                  | 🟢 Done         |
 | **Employability Skills**          | Freelancing Fundamentals              | ⬜ Not Started  |
 |                                   | Presentation Skills                   | ⬜ Not Started  |
-|                                   | Communication Skills                  | ⬜ Not Started  |
+|                                   | Communication Skills                  | 🟢 Done         |
 |                                   | CV Writing & Interviewing             | ⬜ Not Started  |
 |                                   | Work Ethics                           | ⬜ Not Started  |
 | **GenAI Skills**                  | Generative AI & Prompt Engineering    | ⬜ Not Started  | 
