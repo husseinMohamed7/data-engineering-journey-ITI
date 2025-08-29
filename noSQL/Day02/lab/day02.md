@@ -1,4 +1,4 @@
-<img width="1457" height="109" alt="image" src="https://github.com/user-attachments/assets/971c7313-f3ba-46b9-8b4f-3ef324378066" /># Lab 01 - NoSQL (MongoDB) - Hussein Mohamed
+# Lab 02 - NoSQL (MongoDB) - Hussein Mohamed
 ### Use [FacultySystemV2] DB from previous assignment as following:
 ```json
 - Student: 
@@ -113,33 +113,88 @@
 - Task 3: $group
   - Calculate the average grade per faculty.
   - Output: { FacultyID, AverageGrade }
+  - 
+```javascript
+[
+  {
+    $unwind: "$courses"
+  },
+  {
+    $group:
+      /**
+       * _id: The id of the group.
+       * fieldN: The first field name.
+       */
+      {
+        _id: "$facultyID",
+        AverageGrade: {
+          $avg: "$courses.grade"
+        }
+      }
+  },
+  {
+    $project: {
+      _id: 0,
+      "Faculty ID": "$_id",
+      AverageGrade: 1
+    }
+  }
+]
+```
+![003](imgs/003.png)
 
 - Task 4: $out
   - Store the result of Task 3 into a new collection called FacultyGrades.
+```javascript
+{
+$out: "FacultyGrades"
+}
+```
+![004](imgs/004.png)
 
 ## Part 2 - Indexing:
 - Task 5: Create Indexes
 1. Create a regular index on LastName in Student collection to speed up search.
 - creating
+---
 ![005](imgs/005.png)
 
-- test it 
+---
+
+- test it
+
+---
 ![006](imgs/006.png)
+
+---
 
 3. Create a unique index on CourseName in Course to avoid duplicates.
 - creating
+
+---
 ![007](imgs/007.png)
 
+---
+
 - test it
+---
 ![008](imgs/008.png)
 
+---
 
 5. Create a partial index on Student.IsFired == false to optimize frequent queries on active students.
 - creating
+---
 ![009](imgs/009.png)
 
-- test it 
+---
+
+- test it
+---
 ![010](imgs/010.png)
+
+---
+- code
 ```javascript
 {"isFired":false}
 ```
