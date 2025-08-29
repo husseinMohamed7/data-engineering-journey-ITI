@@ -1,6 +1,6 @@
-# Lab 01 - NoSQL (MongoDB) - Hussein Mohamed
+<img width="1457" height="109" alt="image" src="https://github.com/user-attachments/assets/971c7313-f3ba-46b9-8b4f-3ef324378066" /># Lab 01 - NoSQL (MongoDB) - Hussein Mohamed
 ### Use [FacultySystemV2] DB from previous assignment as following:
-```
+```json
 - Student: 
 {
   "FirstName": "John",
@@ -30,7 +30,7 @@
   - Retrieve all students who are not fired.
   - Unwind the Courses array.
   - Project only the student's full name, course ID, and grade.
-```shell
+```javascript
 [
   {
     $match: {
@@ -53,12 +53,16 @@
   }
 ]
 ```
+![001](imgs/001.png)
+
+
+---
 - Task 2: $lookup + $project + $sort
   - Join the course data (from Course) using the course ID in each student’s Courses.
   - Show each student’s full name, course name, grade, and course final mark.
   - Sort by grade descending.
 
-```shell
+```javascript
 [
   {
     $lookup:
@@ -102,17 +106,40 @@
   }
 ]
 ```
+![002](imgs/002.png)
+
+---
+
 - Task 3: $group
   - Calculate the average grade per faculty.
   - Output: { FacultyID, AverageGrade }
+
 - Task 4: $out
   - Store the result of Task 3 into a new collection called FacultyGrades.
 
 ## Part 2 - Indexing:
 - Task 5: Create Indexes
-    1. Create a regular index on LastName in Student collection to speed up search.
-    2. Create a unique index on CourseName in Course to avoid duplicates.
-    3. Create a partial index on Student.IsFired == false to optimize frequent queries on active students.
-Use MongoDB Compass UI to create and test these indexes.
+1. Create a regular index on LastName in Student collection to speed up search.
+- creating
+![005](imgs/005.png)
 
-  
+- test it 
+![006](imgs/006.png)
+
+3. Create a unique index on CourseName in Course to avoid duplicates.
+- creating
+![007](imgs/007.png)
+
+- test it
+![008](imgs/008.png)
+
+
+5. Create a partial index on Student.IsFired == false to optimize frequent queries on active students.
+- creating
+![009](imgs/009.png)
+
+- test it 
+![010](imgs/010.png)
+```javascript
+{"isFired":false}
+```
