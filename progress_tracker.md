@@ -16,7 +16,7 @@
 | **Cloud & Docker**                | AWS Cloud Services                    | ⬜ Not Started  |
 |                                   | Introduction to Docker                | 🟢 Done         |
 | **Workshops**                     | Agile Fundamentals                    | ⬜ Not Started  |
-|                                   | Software Testing                      | ⬜ Not Started  |
+|                                   | Software Testing                      | 🟡 On Going     |
 |                                   | OS Fundamentals                       | 🟢 Done         |
 |                                   | Network Fundamentals                  | 🟢 Done         |
 | **Employability Skills**          | Freelancing Fundamentals              | ⬜ Not Started  |
