@@ -25,7 +25,7 @@
 print ("hi")
 import mongoengine as ME
 
-client = "mongodb+srv://hussein7:S6Ack46HV8q2F2Mv@iti-cluster.f20prbs.mongodb.net/"
+client = "mongodb+srv://................"
 ME.connect(host=client, db = "FacultySystemV2")
 class course(ME.Document):
     _id = ME.IntField()
