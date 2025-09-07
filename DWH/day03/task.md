@@ -296,3 +296,4 @@ erDiagram
     FACT_POWER }o--|| DIM_USE : "use_id"
     FACT_POWER }o--|| DIM_PURSHED : "purshed_id"
 ```
+![schema](schema/schema.png)
