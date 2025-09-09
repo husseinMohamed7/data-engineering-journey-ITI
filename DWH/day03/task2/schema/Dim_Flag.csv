@@ -1,0 +1,4 @@
+Unemployment_Flag,Flag_ID,Description
+Medium,1,Unemployment rate between 8% and 12%
+Low,2,Unemployment rate < 8%
+High,3,Unemployment rate >= 12%
