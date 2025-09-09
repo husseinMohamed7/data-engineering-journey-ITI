@@ -24,3 +24,39 @@ Build a Data Warehouse to analyze the relationship between **Unemployment in Egy
 - GDP growth (Million US$)
 - Literacy rate (%)
 - Foreign Direct Investment (FDI as % of GDP)
+
+---
+
+## ELT
+
+## Diagram 
+```mermaid
+
+erDiagram
+    Dim_Year {
+        int Year_ID PK
+        int Year
+        string Decade
+        string Period
+    }
+
+    Dim_Flag {
+        int Flag_ID PK
+        string Flag_Name
+        string Description
+    }
+
+    Fact_EconomicIndicators {
+        int Fact_ID PK
+        int Year_ID FK
+        decimal Unemployment
+        int Flag_ID FK
+        decimal GDP_Million_USD
+        decimal Literacy_Rate
+        decimal FDI_Million_USD
+    }
+
+    Dim_Year ||--o{ Fact_EconomicIndicators : "has"
+    Dim_Flag ||--o{ Fact_EconomicIndicators : "classified by"
+
+```
