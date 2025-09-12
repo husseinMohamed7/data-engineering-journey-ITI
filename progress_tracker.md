@@ -5,10 +5,10 @@
 | **Fundamentals**                  | Python Programming Language           | 🟡 On Going     |
 |                                   | Introduction to Linux                 | 🟢 Done         |
 |                                   | Database Fundamentals                 | 🟢 Done         |
-| **Working with Data**             | Pandas, NumPy, Matplotlib             | ⬜ Not Started  |
-|                                   | NoSQL Database                        | 🟡 On Going     |
+| **Working with Data**             | Pandas, NumPy, Matplotlib             | 🟡 On Going     |
+|                                   | NoSQL Database                        | 🟢 Done         |
 |                                   | Introduction to Big Data              | ⬜ Not Started  |
-|                                   | Data Warehouse Concept & Services     | ⬜ Not Started  |
+|                                   | Data Warehouse Concept & Services     | 🟡 On Going     |
 |                                   | Data Exploration & Visualization      | ⬜ Not Started  |
 | **Data Processing & Scheduling**  | Data Processing Frameworks            | ⬜ Not Started  |
 |                                   | Workflow Scheduling                   | ⬜ Not Started  |
