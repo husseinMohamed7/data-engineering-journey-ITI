@@ -9,7 +9,7 @@
 |                                   | NoSQL Database                        | 🟢 Done         |
 |                                   | Introduction to Big Data              | ⬜ Not Started  |
 |                                   | Data Warehouse Concept & Services     | 🟡 On Going     |
-|                                   | Data Exploration & Visualization      | ⬜ Not Started  |
+|                                   | Data Exploration & Visualization      | 🟡 On Going     |
 | **Data Processing & Scheduling**  | Data Processing Frameworks            | ⬜ Not Started  |
 |                                   | Workflow Scheduling                   | ⬜ Not Started  |
 |                                   | CI/CD Pipelines                       | ⬜ Not Started  |
