@@ -1,0 +1,3 @@
+from python:3.12-alpine
+copy hello.py /app.py
+cmd ["python", "/app.py"]
