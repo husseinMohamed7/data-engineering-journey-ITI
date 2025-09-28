@@ -1,0 +1,8 @@
+- Create a file on the master node or on any worker node.
+- Write some text inside the file.
+- Put the file on HDFS and display its content using the cat command.
+- Stop one worker and run the commands (ls and cat) on HDFS.
+- Stop the second worker and try again.
+- Stop the third worker and try again.
+- Start one of the workers, open a bash on it, and run ls and cat on HDFS to make sure the file is still there.
+- Stop the master node, then write your observations about what happens and explain why.
