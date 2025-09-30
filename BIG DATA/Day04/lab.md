@@ -52,7 +52,7 @@
 
 ---
 
-## 🔸 7- 7. After dropping the tables, check the HDFS file locations and explain:
+## 🔸 7- After dropping the tables, check the HDFS file locations and explain:
 
 ![explain](imgs/010.png)
 
