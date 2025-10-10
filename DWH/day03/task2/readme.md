@@ -60,3 +60,10 @@ erDiagram
     Dim_Flag ||--o{ Fact_EconomicIndicators : "classified by"
 
 ```
+
+## Dashboard
+
+![dash1](dashboard/001.png)
+
+![dash1](dashboard/002.png)
+
